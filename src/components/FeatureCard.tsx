@@ -4,6 +4,8 @@ export interface FeatureCardProps {
   title: string
   description: string
   icon?: React.ReactNode
+  image?: string
+  variant?: 'compact' | 'long'
   cta?: { text: string; href: string }
   className?: string
 }
@@ -17,6 +19,8 @@ export default function FeatureCard({
   title,
   description,
   icon,
+  image,
+  variant = 'compact',
   cta,
   className = '',
 }: FeatureCardProps): JSX.Element {
@@ -26,6 +30,12 @@ export default function FeatureCard({
       tabIndex={0}
       aria-labelledby={`feature-title-${title.replace(/\s+/g, '-')}`}
     >
+      {/* show image only in the long variant */}
+      {variant === 'long' && image ? (
+        <div className="mb-4 overflow-hidden rounded-md">
+          <img src={image} alt={title} className="w-full h-44 object-cover" />
+        </div>
+      ) : null}
       <div className="flex items-start gap-4">
         {icon && <div className="shrink-0 text-accent">{icon}</div>}
         <div>

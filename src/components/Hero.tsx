@@ -6,10 +6,20 @@ export type Slide = {
   subtitle?: string
   cta?: { text: string; href: string }
   avif?: string
+  avif2x?: string
+  avif3x?: string
   webp?: string
+  webp2x?: string
+  webp3x?: string
   png?: string
+  png2x?: string
+  png3x?: string
   mobilePng?: string // mobile-optimized PNG
+  mobilePng2x?: string
+  mobilePng3x?: string
   jpg?: string
+  jpg2x?: string
+  jpg3x?: string
   svg?: string
   objectPosition?: string
   mobileObjectPosition?: string // mobile-specific object position
@@ -71,35 +81,89 @@ export default function Hero({
             className="absolute inset-0 z-0 pointer-events-none flex items-stretch"
             aria-hidden
           >
-            <picture className="absolute inset-0 w-full h-full">
-              {/* Mobile-optimized image source */}
+            <picture className="absolute inset-0 w-full h-full hero-bg">
+              {/* Mobile-first source: use mobile PNG or mobile 2x if available */}
+              {/* Mobile-first source: let browser pick mobile asset for small viewports */}
               {slides[index].mobilePng && (
                 <source
-                  srcSet={slides[index].mobilePng}
-                  type="image/png"
                   media="(max-width: 640px)"
+                  srcSet={[
+                    slides[index].mobilePng && `${slides[index].mobilePng} 1x`,
+                    slides[index].mobilePng2x && `${slides[index].mobilePng2x} 2x`,
+                    slides[index].mobilePng3x && `${slides[index].mobilePng3x} 3x`,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                  type="image/png"
                 />
               )}
-              {slides[index].avif && <source srcSet={slides[index].avif} type="image/avif" />}
-              {slides[index].webp && <source srcSet={slides[index].webp} type="image/webp" />}
-              {slides[index].png && <source srcSet={slides[index].png} type="image/png" />}
-              {slides[index].jpg && <source srcSet={slides[index].jpg} type="image/jpeg" />}
+
+              {slides[index].avif && (
+                <source
+                  srcSet={[
+                    slides[index].avif && `${slides[index].avif} 1x`,
+                    slides[index].avif2x && `${slides[index].avif2x} 2x`,
+                    slides[index].avif3x && `${slides[index].avif3x} 3x`,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                  type="image/avif"
+                />
+              )}
+
+              {slides[index].webp && (
+                <source
+                  srcSet={[
+                    slides[index].webp && `${slides[index].webp} 1x`,
+                    slides[index].webp2x && `${slides[index].webp2x} 2x`,
+                    slides[index].webp3x && `${slides[index].webp3x} 3x`,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                  type="image/webp"
+                />
+              )}
+
+              {slides[index].png && (
+                <source
+                  srcSet={[
+                    slides[index].png && `${slides[index].png} 1x`,
+                    slides[index].png2x && `${slides[index].png2x} 2x`,
+                    slides[index].png3x && `${slides[index].png3x} 3x`,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                  type="image/png"
+                />
+              )}
+
+              {slides[index].jpg && (
+                <source
+                  srcSet={[
+                    slides[index].jpg && `${slides[index].jpg} 1x`,
+                    slides[index].jpg2x && `${slides[index].jpg2x} 2x`,
+                    slides[index].jpg3x && `${slides[index].jpg3x} 3x`,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                  type="image/jpeg"
+                />
+              )}
+
               {slides[index].svg && <source srcSet={slides[index].svg} type="image/svg+xml" />}
+
+              {/* img fallback — browser will pick the best source above */}
               <img
-                src={
-                  slides[index].mobilePng && window.innerWidth <= 640
-                    ? slides[index].mobilePng
-                    : slides[index].avif ||
-                      slides[index].webp ||
-                      slides[index].png ||
-                      slides[index].jpg ||
-                      slides[index].svg
-                }
+                src={slides[index].avif || slides[index].webp || slides[index].png || slides[index].jpg || slides[index].svg}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover sm:object-center object-top"
-                style={{ objectPosition: window.innerWidth <= 640
-                  ? slides[index].mobileObjectPosition || 'center'
-                  : slides[index].objectPosition || 'center' }}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={
+                  {
+                    // set CSS variables for object-position; CSS will apply mobile override via media query
+                    ['--hero-object-position' as any]: slides[index].objectPosition || 'center',
+                    ['--hero-object-position-mobile' as any]: slides[index].mobileObjectPosition || slides[index].objectPosition || 'center',
+                  } as React.CSSProperties
+                }
                 sizes="(max-width: 640px) 100vw, 100vw"
               />
             </picture>

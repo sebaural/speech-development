@@ -73,12 +73,13 @@ export default function Features(): JSX.Element {
 					</p>
 				</header>
 
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{/* Use an auto-fit CSS grid so cards grow to fill available width regardless of count */}
+				<div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
 					{featuresData.map((f, idx) => (
 						<Link
 							key={f.slug}
 							to={`/features/${f.slug}`}
-							className="no-underline focus:outline-none"
+							className="no-underline focus:outline-none flex h-full"
 							aria-label={`View details for ${f.title}`}
 						>
 							<FeatureCard
@@ -86,7 +87,7 @@ export default function Features(): JSX.Element {
 								description={f.description}
 								icon={icons[idx % icons.length]}
 								// remove CTA here to avoid nested links; detail page handles CTAs
-								className="cursor-pointer"
+								className="cursor-pointer flex-1 h-full"
 							/>
 						</Link>
 					))}

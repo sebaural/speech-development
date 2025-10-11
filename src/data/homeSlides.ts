@@ -8,7 +8,6 @@ const homeSlides: Slide[] = [
     png: '/images/hero_speech-on-line.png',
     mobilePng: '/images/hero_speech-on-line.mobile.png',
     objectPosition: 'center 20%',
-    mobileObjectPosition: 'center',
   },
   {
     title: 'Welcome to Наши Услуги',
@@ -17,7 +16,6 @@ const homeSlides: Slide[] = [
     png: '/images/hero_speech-on-line.png',
     mobilePng: '/images/hero_speech-on-line.mobile.png',
     objectPosition: 'center 20%',
-    mobileObjectPosition: 'center',
   },
 ]
 

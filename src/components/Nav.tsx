@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Nav(): JSX.Element {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === '/' || location.pathname === ''
 
   return (
-    <header className="bg-white shadow-sm">
-      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
+      <div className="mx-auto max-w-6xl px-6 py-3 md:py-4 flex items-center justify-between">
         <Link to="/" className="text-lg font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
           BrandName
         </Link>
 
         <nav className="hidden md:flex gap-6">
-          <Link to="/" className="text-sm">Home</Link>
+          {!isHome && <Link to="/" className="text-sm">Home</Link>}
           <Link to="/features" className="text-sm">Features</Link>
           <Link to="/testimonials" className="text-sm">Testimonials</Link>
           <Link to="/contact" className="text-sm">Contact</Link>
@@ -41,11 +43,13 @@ export default function Nav(): JSX.Element {
         </button>
       </div>
 
-      {/* mobile menu */}
+      {/* mobile menu (rendered below header; use absolute positioning so it doesn't shift layout) */}
       {open && (
-        <div id="mobile-menu" className="md:hidden bg-white border-t">
+        <div id="mobile-menu" className="md:hidden absolute inset-x-0 top-full z-30 bg-white border-t shadow-sm">
           <div className="px-6 py-4 flex flex-col gap-3">
-            <Link to="/" onClick={() => setOpen(false)} className="block">Home</Link>
+            {!isHome && (
+              <Link to="/" onClick={() => setOpen(false)} className="block">Home</Link>
+            )}
             <Link to="/features" onClick={() => setOpen(false)} className="block">Features</Link>
             <Link to="/testimonials" onClick={() => setOpen(false)} className="block">Testimonials</Link>
             <Link to="/contact" onClick={() => setOpen(false)} className="block">Contact</Link>
