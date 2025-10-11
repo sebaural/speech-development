@@ -1,0 +1,1 @@
+Placeholder assets folder. Replace with your images (e.g., svg/png) in src/assets/

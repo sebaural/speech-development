@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html, body, #root { height: 100%; }
+
+	/* Minimal custom styles to establish a modern look */
+	body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+	/* Visible focus styles for keyboard users: use :focus-visible when supported */
+	:focus { outline: none; }
+
+	:where(:focus-visible) {
+		outline: 2px solid transparent;
+		box-shadow: 0 0 0 4px rgba(59,130,246,0.15), 0 0 0 2px rgba(59,130,246,0.35);
+		border-radius: 6px;
+	}
+
+	/* Utility: ensure anchor focus offset when on white backgrounds */
+	.focus-ring-on-white:where(:focus-visible) {
+		box-shadow: 0 0 0 4px rgba(99,102,241,0.12), 0 0 0 2px rgba(99,102,241,0.28);
+	}
+}
