@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <main>
       <Nav />
-      <Hero slides={homeSlides} heightClasses="h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-[40vh]" />
+      <Hero slides={homeSlides} heightClasses="h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-[50vh]" />
       <Features />
       <Testimonials />
       <CTA />

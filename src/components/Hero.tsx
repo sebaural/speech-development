@@ -193,8 +193,8 @@ export default function Hero({
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
             >
-              <h1 className="text-4xl font-bold text-primary">{slides[index].title}</h1>
-              <p className="mt-4 text-lg text-slate-600">{slides[index].subtitle}</p>
+              <h1 className="text-4xl font-bold text-white">{slides[index].title}</h1>
+              <p className="mt-4 text-lg text-white/90">{slides[index].subtitle}</p>
               <div className="mt-8 flex justify-center gap-4">
                 {slides[index].cta && (
                   <a

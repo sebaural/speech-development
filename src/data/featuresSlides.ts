@@ -5,8 +5,8 @@ const featuresSlides: Slide[] = [
     title: 'Features that accelerate outcomes',
     subtitle: 'Thoughtful product features that drive growth and retention.',
     cta: { text: 'Explore features', href: '#features' },
-    png: '/images/hero_speech-on-line.png',
-    mobilePng: '/images/hero_speech-on-line.mobile.png',
+    png: '/images/speech-on-line_2.jpeg',
+    mobilePng: '/images/speech-on-line_2.jpeg',
     objectPosition: 'center 40%',
   },
 ]

@@ -12,7 +12,6 @@ export default function AccessibleByDesign(): JSX.Element {
     {
       title: feature.title,
       subtitle: feature.description,
-      cta: feature.cta,
     },
   ]
 
@@ -21,7 +20,7 @@ export default function AccessibleByDesign(): JSX.Element {
       <Nav />
       <Hero slides={heroSlides} autoplay={false} heightClasses="h-[30vh] sm:h-[35vh] md:h-[40vh]" />
       <main className="mx-auto max-w-4xl px-6 py-12">
-  <FeatureCard title={feature.title} description={feature.longDescription || feature.description} variant="long" image={feature.image} />
+  <FeatureCard title={feature.title} description={feature.longDescription || feature.description} variant="long" image={feature.image} imageRound />
       </main>
       <Footer />
     </>
