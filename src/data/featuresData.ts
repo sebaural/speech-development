@@ -38,6 +38,10 @@ export const featuresData: FeatureData[] = [
   image: '/images/features/architecture.svg',
     cta: { text: 'Architecture', href: '#architecture' },
   },
+
+]
+
+/* 
 {
   slug: 'enterprise-support',
   title: 'Enterprise support',
@@ -47,5 +51,4 @@ export const featuresData: FeatureData[] = [
     'Enterprise support: dedicated onboarding, SLAs, security reviews, and priority incident handling for mission-critical systems.',
   image: '/images/features/enterprise.svg',
   cta: { text: 'Contact sales', href: '/contact' },
-},
-]
+}, */

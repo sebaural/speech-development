@@ -36,14 +36,21 @@ export default function FeatureCard({
           <img src={image} alt={title} className="w-full h-44 object-cover" />
         </div>
       ) : null}
-      <div className="flex items-start gap-4">
-        {icon && <div className="shrink-0 text-accent">{icon}</div>}
-        <div>
-          <h3 id={`feature-title-${title.replace(/\s+/g, '-')}`} className="text-lg font-semibold text-slate-900">
-            {title}
-          </h3>
-          <p className="mt-2 text-sm text-slate-600">{description}</p>
+
+      {/* Icon on top, centered */}
+      {icon ? (
+        <div className="mb-3 flex justify-center">
+          <div className="inline-flex items-center justify-center rounded-full bg-slate-100 text-accent">
+            {icon}
+          </div>
         </div>
+      ) : null}
+
+      <div>
+        <h3 id={`feature-title-${title.replace(/\s+/g, '-')}`} className="text-lg font-semibold text-slate-900 text-center">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm text-slate-600 text-center">{description}</p>
       </div>
 
       {cta ? (

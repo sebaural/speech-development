@@ -4,50 +4,29 @@ import FeatureCard from './FeatureCard'
 import { featuresData } from '../data/featuresData'
 
 const icons = [
+	<img
+		className="h-20 w-20 object-contain"
+		src="/images/features/kids.png"
+		alt=""
+		loading="lazy"
+		aria-hidden="true"
+	/>,
+	<img
+		className="h-20 w-20 object-contain"
+		src="/images/features/teenagers.png"
+		alt=""
+		loading="lazy"
+		aria-hidden="true"
+	/>,
+	<img
+		className="h-20 w-20 object-contain"
+		src="/images/features/adults.png"
+		alt=""
+		loading="lazy"
+		aria-hidden="true"
+	/>,
 	<svg
-		className="h-6 w-6"
-		fill="none"
-		stroke="currentColor"
-		viewBox="0 0 24 24"
-		aria-hidden
-	>
-		<path
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth={2}
-			d="M13 10V3L4 14h7v7l9-11h-7z"
-		/>
-	</svg>,
-	<svg
-		className="h-6 w-6"
-		fill="none"
-		stroke="currentColor"
-		viewBox="0 0 24 24"
-		aria-hidden
-	>
-		<path
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth={2}
-			d="M12 2v20M2 12h20"
-		/>
-	</svg>,
-	<svg
-		className="h-6 w-6"
-		fill="none"
-		stroke="currentColor"
-		viewBox="0 0 24 24"
-		aria-hidden
-	>
-		<path
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth={2}
-			d="M3 7h18M3 12h18M3 17h18"
-		/>
-	</svg>,
-	<svg
-		className="h-6 w-6"
+		className="h-20 w-20"
 		fill="none"
 		stroke="currentColor"
 		viewBox="0 0 24 24"
