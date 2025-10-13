@@ -27,19 +27,19 @@ export default function ContactForm(): JSX.Element {
     const newErrors: FormErrors = {}
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required'
+      newErrors.name = 'Имя обязательно для заполнения'
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email address is required'
+      newErrors.email = 'Электронная почта обязательна для заполнения'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address'
+      newErrors.email = 'Пожалуйста, введите действительный адрес электронной почты'
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required'
+      newErrors.message = 'Сообщение обязательно для заполнения'
     } else if (formData.message.length > 300) {
-      newErrors.message = 'Message must be 300 characters or less'
+      newErrors.message = 'Сообщение должно содержать не более 300 символов'
     }
 
     setErrors(newErrors)
@@ -49,36 +49,31 @@ export default function ContactForm(): JSX.Element {
   const sanitizeInput = (input: string, fieldName: string): string => {
     if (fieldName === 'message') {
       // Remove HTML tags, script content, and potentially dangerous characters
-      // Preserve internal spaces and line breaks
+      // Preserve all spaces and line breaks for natural text input
       return input
         .replace(/<[^>]*>/g, '') // Remove HTML tags
-        .replace(/javascript:/gi, '') // Remove javascript: protocols
+        .replace(/javascript:/gi, '') // Remove javascript: protocols  
         .replace(/on\w+\s*=/gi, '') // Remove event handlers like onclick=
         .replace(/[<>&"'`]/g, '') // Remove dangerous special characters
-        .replace(/\{|\}/g, '') // Remove curly braces
-        .replace(/\[|\]/g, '') // Remove square brackets
-        .replace(/^\s+|\s+$/g, '') // Only trim leading/trailing whitespace, preserve internal spaces
+        .replace(/[{}[\]]/g, '') // Remove curly braces and square brackets
     }
     
     if (fieldName === 'name') {
       // Allow letters, spaces, hyphens, apostrophes, and periods for names
-      // Preserve internal spaces but clean up multiple consecutive spaces
+      // Preserve spaces for full names like "John Smith"
       return input
-        .replace(/[^a-zA-ZÀ-ÿ\s\-'\.]/g, '') // Keep letters, spaces, hyphens, apostrophes, periods
-        .replace(/\s+/g, ' ') // Replace multiple spaces with single space
-        .replace(/^\s+|\s+$/g, '') // Only trim leading/trailing whitespace
+        .replace(/[^a-zA-ZÀ-ÿ\s\-'\.]/g, '') // Keep only safe characters including spaces
+        .replace(/\s{2,}/g, ' ') // Replace multiple consecutive spaces with single space
     }
     
     if (fieldName === 'email') {
-      // Basic email sanitization - remove dangerous characters but keep email format
-      // Email addresses don't typically have internal spaces, but preserve if entered
+      // Basic email sanitization - remove dangerous characters but keep email format  
       return input
-        .replace(/[<>&"'`]/g, '')
-        .replace(/javascript:/gi, '')
-        .replace(/^\s+|\s+$/g, '') // Only trim leading/trailing whitespace
+        .replace(/[<>&"'`]/g, '') // Remove dangerous characters
+        .replace(/javascript:/gi, '') // Remove javascript: protocols
     }
     
-    return input.replace(/^\s+|\s+$/g, '') // Only trim leading/trailing whitespace for other fields
+    return input // Return input as-is for other fields
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -129,7 +124,7 @@ export default function ContactForm(): JSX.Element {
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {
       console.error('Form submission error:', error)
-      alert('There was an error opening your email client. Please try again.')
+      alert('Произошла ошибка при открытии почтового клиента. Пожалуйста, попробуйте снова.')
     } finally {
       setIsSubmitting(false)
     }
@@ -144,13 +139,13 @@ export default function ContactForm(): JSX.Element {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-green-800 mb-2">Message Sent!</h3>
-          <p className="text-green-700 mb-4">Thank you for your message. We'll get back to you soon.</p>
+          <h3 className="text-lg font-semibold text-green-800 mb-2">Сообщение отправлено!</h3>
+          <p className="text-green-700 mb-4">Спасибо за ваше сообщение. Мы свяжемся с вами в ближайшее время.</p>
           <button
             onClick={() => setIsSubmitted(false)}
             className="text-green-600 hover:text-green-800 underline font-medium"
           >
-            Send another message
+            Отправить ещё сообщение
           </button>
         </div>
       </div>
@@ -162,7 +157,7 @@ export default function ContactForm(): JSX.Element {
       {/* Name Field */}
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-          Name *
+          Имя *
         </label>
         <input
           type="text"
@@ -173,7 +168,7 @@ export default function ContactForm(): JSX.Element {
           className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-accent focus:border-accent ${
             errors.name ? 'border-red-300 bg-red-50' : 'border-slate-300'
           }`}
-          placeholder="Enter your full name"
+          placeholder="Введите ваше полное имя"
           aria-describedby={errors.name ? "name-error" : undefined}
           aria-invalid={!!errors.name}
         />
@@ -187,7 +182,7 @@ export default function ContactForm(): JSX.Element {
       {/* Email Field */}
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-          Email Address *
+          Электронная почта *
         </label>
         <input
           type="email"
@@ -198,7 +193,7 @@ export default function ContactForm(): JSX.Element {
           className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-accent focus:border-accent ${
             errors.email ? 'border-red-300 bg-red-50' : 'border-slate-300'
           }`}
-          placeholder="Enter your email address"
+          placeholder="Введите вашу электронную почту"
           aria-describedby={errors.email ? "email-error" : undefined}
           aria-invalid={!!errors.email}
         />
@@ -212,7 +207,7 @@ export default function ContactForm(): JSX.Element {
       {/* Message Field */}
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-          Message *
+          Сообщение *
         </label>
         <textarea
           id="message"
@@ -224,7 +219,7 @@ export default function ContactForm(): JSX.Element {
           className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-accent focus:border-accent resize-vertical ${
             errors.message ? 'border-red-300 bg-red-50' : 'border-slate-300'
           }`}
-          placeholder="Enter your message (max 300 characters)"
+          placeholder="Введите ваше сообщение (максимум 300 символов)"
           aria-describedby={errors.message ? "message-error" : "message-count"}
           aria-invalid={!!errors.message}
         />
@@ -260,10 +255,10 @@ export default function ContactForm(): JSX.Element {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
               </svg>
-              Sending...
+              Отправка...
             </span>
           ) : (
-            'Send Message'
+            'Отправить сообщение'
           )}
         </button>
       </div>
