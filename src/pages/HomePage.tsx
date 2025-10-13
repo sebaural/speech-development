@@ -19,10 +19,10 @@ export default function HomePage() {
       <Teachers />
     </div>
     </section>
-      <CTA />
+    {/*   <CTA /> */}
       <section className="py-12 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6">
-          <h3 className="text-xl font-semibold">Contact us</h3>
+          <h3 className="text-xl font-semibold">Свяжитесь с нами</h3>
           <div className="mt-4 max-w-lg">
             <ContactForm />
           </div>

@@ -130,7 +130,7 @@ export default function ContactForm(): JSX.Element {
     }
   }
 
-  if (isSubmitted) {
+/*   if (isSubmitted) {
     return (
       <div className="max-w-lg mx-auto p-6 bg-green-50 border border-green-200 rounded-lg">
         <div className="text-center">
@@ -150,7 +150,7 @@ export default function ContactForm(): JSX.Element {
         </div>
       </div>
     )
-  }
+  } */
 
   return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6" noValidate>
