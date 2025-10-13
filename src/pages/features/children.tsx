@@ -5,9 +5,10 @@ import FeatureCard from '../../components/FeatureCard'
 import { featuresData } from '../../data/featuresData'
 import Nav from '../../components/Nav'
 
-const feature = featuresData.find((f) => f.slug === 'fast-reliable-delivery')!
+// This page corresponds to the 'children' feature in featuresData
+const feature = featuresData.find((f) => f.slug === 'children')!
 
-export default function FastReliableDelivery(): JSX.Element {
+export default function Children(): JSX.Element {
   const heroSlides = [
     {
       title: feature.title,

@@ -4,10 +4,9 @@ import HomePage from './pages/HomePage'
 import FeaturesPage from './pages/FeaturesPage'
 import TeachersPage from './pages/TeachersPage'
 import ContactPage from './pages/ContactPage'
-import FastReliableDelivery from './pages/features/fast-reliable-delivery'
-import AccessibleByDesign from './pages/features/accessible-by-design'
-import ScalableArchitecture from './pages/features/scalable-architecture'
-import EnterpriseSupport from './pages/features/enterprise-support'
+import Children from './pages/features/children'
+import Teenagers from './pages/features/teenagers'
+import Adults from './pages/features/adults'
 import Hero from './components/Hero'
 import FeatureCard from './components/FeatureCard'
 import Footer from './components/Footer'
@@ -62,11 +61,10 @@ export default function App(): JSX.Element {
       <Route path="/" element={<HomePage />} />
       <Route path="/features" element={<FeaturesPage />} />
 
-      {/* per-feature static pages */}
-      <Route path="/features/fast-reliable-delivery" element={<FastReliableDelivery />} />
-      <Route path="/features/accessible-by-design" element={<AccessibleByDesign />} />
-      <Route path="/features/scalable-architecture" element={<ScalableArchitecture />} />
-      <Route path="/features/enterprise-support" element={<EnterpriseSupport />} />
+  {/* per-feature static pages (mapped to slugs in featuresData) */}
+  <Route path="/features/children" element={<Children />} />
+  <Route path="/features/teenagers" element={<Teenagers />} />
+  <Route path="/features/adults" element={<Adults />} />
 
       {/* dynamic per-slug route handled inline to avoid unresolved import */}
       <Route path="/features/:slug" element={<FeatureDetail />} />

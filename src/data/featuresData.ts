@@ -9,7 +9,7 @@ export type FeatureData = {
 
 export const featuresData: FeatureData[] = [
   {
-    slug: 'fast-reliable-delivery',
+    slug: 'children',
     title: 'Дети',
     description:
       'Deploy quickly with predictable, audited release processes and robust monitoring.',
@@ -19,7 +19,7 @@ export const featuresData: FeatureData[] = [
     cta: { text: 'Read docs', href: '#delivery' },
   },
   {
-    slug: 'accessible-by-design',
+    slug: 'teenagers',
     title: 'Подростки',
     description:
       'Components and interactions built with keyboard navigation and screen readers in mind.',
@@ -29,7 +29,7 @@ export const featuresData: FeatureData[] = [
     cta: { text: 'Accessibility', href: '#accessibility' },
   },
  {
-    slug: 'scalable-architecture',
+    slug: 'adults',
     title: 'Взрослые',
     description:
       'Design patterns and infrastructure that let you scale confidently as your product grows.',
@@ -40,15 +40,3 @@ export const featuresData: FeatureData[] = [
   },
 
 ]
-
-/* 
-{
-  slug: 'enterprise-support',
-  title: 'Enterprise support',
-  description:
-    'SLA-backed support and onboarding to keep your team productive and secure.',
-  longDescription:
-    'Enterprise support: dedicated onboarding, SLAs, security reviews, and priority incident handling for mission-critical systems.',
-  image: '/images/features/enterprise.svg',
-  cta: { text: 'Contact sales', href: '/contact' },
-}, */

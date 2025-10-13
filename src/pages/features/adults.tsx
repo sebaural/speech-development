@@ -5,9 +5,10 @@ import FeatureCard from '../../components/FeatureCard'
 import { featuresData } from '../../data/featuresData'
 import Nav from '../../components/Nav'
 
-const feature = featuresData.find((f) => f.slug === 'enterprise-support')!
+// This page corresponds to the 'adults' feature in featuresData
+const feature = featuresData.find((f) => f.slug === 'adults')!
 
-export default function EnterpriseSupport(): JSX.Element {
+export default function Adults(): JSX.Element {
   const heroSlides = [
     {
       title: feature.title,

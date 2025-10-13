@@ -5,9 +5,10 @@ import FeatureCard from '../../components/FeatureCard'
 import { featuresData } from '../../data/featuresData'
 import Nav from '../../components/Nav'
 
-const feature = featuresData.find((f) => f.slug === 'accessible-by-design')!
+// This page corresponds to the 'teenagers' feature in featuresData
+const feature = featuresData.find((f) => f.slug === 'teenagers')!
 
-export default function AccessibleByDesign(): JSX.Element {
+export default function Teenagers(): JSX.Element {
   const heroSlides = [
     {
       title: feature.title,
