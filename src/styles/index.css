@@ -37,7 +37,7 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
 }
 
 /* Desktop-only teacher image sizing: 146x146px for large screens and up */
-@media (min-width: 624px) {
+@media (min-width: 640px) {
 	.teacher-image {
 		width: 146px;
 		height: 146px;
