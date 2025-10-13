@@ -12,6 +12,8 @@ import Hero from './components/Hero'
 import FeatureCard from './components/FeatureCard'
 import Footer from './components/Footer'
 import { featuresData } from './data/featuresData'
+import testimonials from './data/testimonials'
+import TestimonialDetailPage from './pages/testimonials/[slug]'
 
 export default function App(): JSX.Element {
   // Inline dynamic feature-detail route component to avoid a missing import error
@@ -53,6 +55,8 @@ export default function App(): JSX.Element {
     )
   }
 
+  
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -68,6 +72,7 @@ export default function App(): JSX.Element {
       <Route path="/features/:slug" element={<FeatureDetail />} />
 
       <Route path="/testimonials" element={<TestimonialsPage />} />
+      <Route path="/testimonials/:slug" element={<TestimonialDetailPage />} />
       <Route path="/contact" element={<ContactPage />} />
     </Routes>
   )
