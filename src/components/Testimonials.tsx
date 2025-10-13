@@ -17,9 +17,7 @@ export default function Testimonials() {
             // and normalize to a relative /testimonials/<slug> path so links
             // always point to the local testimonial detail page.
             const tAny = t as any
-            const provided = tAny.href ? String(tAny.href).replace(/\/+$/g, '') : null
-            const providedSlug = provided ? provided.split('/').pop() : null
-            const slug = providedSlug || slugify(t.name)
+            const slug = tAny.slug || (tAny.href ? String(tAny.href).replace(/\/+$/g, '').split('/').pop() : slugify(t.name))
             const href = `/testimonials/${slug}`
             return (
               <Link
@@ -32,12 +30,12 @@ export default function Testimonials() {
                   <div className="flex items-center gap-3">
                     {t.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={t.image} alt={`${t.name} avatar`} className="h-8 w-8 rounded-full object-cover" />
+                      <img src={t.image} alt={`${t.name}`} className="h-20 w-20 rounded-full object-cover" />
                     ) : null}
                     <span className="text-sm text-slate-500">— {t.name}</span>
                   </div>
 
-                  <p className="mt-3 text-slate-700">“{t.quote}”</p>
+                  <p className="mt-3 text-slate-700">{t.quote}</p>
                 </blockquote>
               </Link>
             )
