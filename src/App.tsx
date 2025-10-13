@@ -11,7 +11,6 @@ import Hero from './components/Hero'
 import FeatureCard from './components/FeatureCard'
 import Footer from './components/Footer'
 import { featuresData } from './data/featuresData'
-import teachers from './data/teachers'
 import TestimonialDetailPage from './pages/teachers/[slug]'
 
 export default function App(): JSX.Element {
