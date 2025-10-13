@@ -1,8 +1,9 @@
-// Default testimonials used across the site. Keep small and editable.
-const testimonials = [
+// Default teachers used across the site. Keep small and editable.
+const teachers = [
   {
     image: '/images/Tatiana_Sevostianova.jpg',
     name: 'Севостьянова Татьяна',
+    email: 'tatiana.sevostianova@example.com',
     slug: 'sevostianova-tatiana',
     quote: 'Логопедические услуги для детей и взрослых',
     longDescription:
@@ -12,6 +13,7 @@ const testimonials = [
   {
     image: '/images/Горовая_Оксана.jpg',
     name: 'Горовая Оксана',
+    email: 'oksana.gorovaya@example.com',
     slug: 'gorovaya-oksana',
     quote: 'Учитель начальных классов, репетитор по математике и русскому языку',
     longDescription:
@@ -20,4 +22,4 @@ const testimonials = [
   }
 ]
 
-export default testimonials
+export default teachers

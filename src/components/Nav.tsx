@@ -17,7 +17,7 @@ export default function Nav(): JSX.Element {
         <nav className="hidden md:flex gap-6">
           {!isHome && <Link to="/" className="text-sm">Home</Link>}
           <Link to="/features" className="text-sm">Features</Link>
-          <Link to="/testimonials" className="text-sm">Testimonials</Link>
+          <Link to="/teachers" className="text-sm">Teachers</Link>
           <Link to="/contact" className="text-sm">Contact</Link>
         </nav>
 
@@ -52,7 +52,7 @@ export default function Nav(): JSX.Element {
               <Link to="/" onClick={() => setOpen(false)} className="block">Home</Link>
             )}
             <Link to="/features" onClick={() => setOpen(false)} className="block">Features</Link>
-            <Link to="/testimonials" onClick={() => setOpen(false)} className="block">Testimonials</Link>
+            <Link to="/teachers" onClick={() => setOpen(false)} className="block">Teachers</Link>
             <Link to="/contact" onClick={() => setOpen(false)} className="block">Contact</Link>
           </div>
         </div>

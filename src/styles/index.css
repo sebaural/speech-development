@@ -35,3 +35,13 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
  		object-position: var(--hero-object-position-mobile, var(--hero-object-position, center));
  	}
 }
+
+/* Desktop-only teacher image sizing: 146x146px for large screens and up */
+@media (min-width: 624px) {
+	.teacher-image {
+		width: 146px;
+		height: 146px;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+}

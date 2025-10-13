@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route, useParams, Link } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import FeaturesPage from './pages/FeaturesPage'
-import TestimonialsPage from './pages/TestimonialsPage'
+import TeachersPage from './pages/TeachersPage'
 import ContactPage from './pages/ContactPage'
 import FastReliableDelivery from './pages/features/fast-reliable-delivery'
 import AccessibleByDesign from './pages/features/accessible-by-design'
@@ -12,8 +12,8 @@ import Hero from './components/Hero'
 import FeatureCard from './components/FeatureCard'
 import Footer from './components/Footer'
 import { featuresData } from './data/featuresData'
-import testimonials from './data/testimonials'
-import TestimonialDetailPage from './pages/testimonials/[slug]'
+import teachers from './data/teachers'
+import TestimonialDetailPage from './pages/teachers/[slug]'
 
 export default function App(): JSX.Element {
   // Inline dynamic feature-detail route component to avoid a missing import error
@@ -71,8 +71,8 @@ export default function App(): JSX.Element {
       {/* dynamic per-slug route handled inline to avoid unresolved import */}
       <Route path="/features/:slug" element={<FeatureDetail />} />
 
-      <Route path="/testimonials" element={<TestimonialsPage />} />
-      <Route path="/testimonials/:slug" element={<TestimonialDetailPage />} />
+  <Route path="/teachers" element={<TeachersPage />} />
+  <Route path="/teachers/:slug" element={<TestimonialDetailPage />} />
       <Route path="/contact" element={<ContactPage />} />
     </Routes>
   )
