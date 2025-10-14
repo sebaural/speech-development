@@ -59,10 +59,10 @@ export default function ContactForm(): JSX.Element {
     }
     
     if (fieldName === 'name') {
-      // Allow letters, spaces, hyphens, apostrophes, and periods for names
-      // Preserve spaces for full names like "John Smith"
+      // Allow letters (Latin and Cyrillic), spaces, hyphens, apostrophes, and periods for names
+      // Preserve spaces for full names like "John Smith" or "Анна Иванова"
       return input
-        .replace(/[^a-zA-ZÀ-ÿ\s\-'\.]/g, '') // Keep only safe characters including spaces
+        .replace(/[^a-zA-ZÀ-ÿа-яА-ЯёЁ\s\-'\.]/g, '') // Keep only safe characters including Russian and spaces
         .replace(/\s{2,}/g, ' ') // Replace multiple consecutive spaces with single space
     }
     
@@ -105,14 +105,14 @@ export default function ContactForm(): JSX.Element {
     
     try {
       // Create mailto URL with form data
-      const subject = encodeURIComponent(`Contact Form Message from ${formData.name}`)
+      const subject = encodeURIComponent(`Речь и Развитие - Сообщение от ${formData.name}`)
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
         `Email: ${formData.email}\n\n` +
         `Message:\n${formData.message}`
       )
       
-      const mailtoUrl = `mailto:sevomax@yahoo.com?subject=${subject}&body=${body}`
+      const mailtoUrl = `mailto:sevomax@gmail.com?subject=${subject}&body=${body}`
       
       // Open default email client
       window.location.href = mailtoUrl
