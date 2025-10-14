@@ -107,9 +107,9 @@ export default function ContactForm(): JSX.Element {
       // Create mailto URL with form data
       const subject = encodeURIComponent(`Речь и Развитие - Сообщение от ${formData.name}`)
       const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n\n` +
-        `Message:\n${formData.message}`
+        `Имя: \n${formData.name}\n\n` +
+        `Электронная почта: \n${formData.email}\n\n` +
+        `Сообщение:\n\n${formData.message}`
       )
       
       const mailtoUrl = `mailto:sevomax@gmail.com?subject=${subject}&body=${body}`
