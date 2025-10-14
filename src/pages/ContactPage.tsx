@@ -10,13 +10,13 @@ export default function ContactPage() {
     <main>
       <Nav />
       <Hero slides={contactSlides} heightClasses="h-[25vh] sm:h-[30vh] md:h-[36vh] lg:h-[40vh]" />
-      <section className="py-16">
+      <section className="py-10">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold">Свяжитесь с нами</h2>
-          <p className="mt-4 text-slate-600">Заполните форму ниже, и мы свяжемся с вами.</p>
+          {/* <h2 className="text-2xl font-semibold">Свяжитесь с нами</h2> */}
+          <p className="mt-4 text-2xl text-slate-600">Заполните форму ниже, и мы свяжемся с вами.</p>
         </div>
       </section>
-      <section className="py-12 bg-slate-50">
+      <section className="py-10 bg-gray-100">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mt-4 max-w-lg">
             <ContactForm />
