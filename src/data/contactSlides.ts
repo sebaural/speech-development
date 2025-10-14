@@ -2,13 +2,10 @@ import type { Slide } from '../components/Hero'
 
 const contactSlides: Slide[] = [
   {
-    title: 'Get in touch',
-    subtitle: 'We’d love to hear about your project and how we can help.',
-    cta: { text: 'Contact us', href: '#contact' },
-    jpg: '/images/hero-2.jpg',
-    webp: '/images/hero-2.webp',
-    avif: '/images/hero-2.avif',
-    svg: '/images/hero-2.svg',
+    title: 'Свяжитесь с нами',
+    subtitle: 'Мы будем рады услышать, как мы можем Вам помочь.',
+    png: '/images/HP_hero_BG.jpg',
+    mobilePng: '/images/HP_hero_BG.jpg',
     objectPosition: 'center 50%',
   },
 ]

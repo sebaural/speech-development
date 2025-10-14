@@ -2,17 +2,17 @@ import type { Slide } from '../components/Hero'
 
 const homeSlides: Slide[] = [
   {
-    title: 'Welcome to Our Redesign',
-    subtitle: 'A modern, professional experience built for trust and growth.',
+    title: 'Современные технологии для развития',
+    subtitle: 'Инновационные методы и подходы для вашего успеха.',
   cta: { text: 'Наши педагоги', href: '/teachers' },
     png: '/images/hero_speech-on-line.png',
     mobilePng: '/images/hero_speech-on-line.mobile.png',
     objectPosition: 'center 20%',
   },
   {
-    title: 'Welcome to Наши Услуги',
-    subtitle: 'A modern, professional experience built for trust and growth.',
-    cta: { text: 'Наши Услуги', href: '/features' },
+    title: 'Наши Услуги',
+    subtitle: 'развивать восприятие, воображение, мышление, внимание, память, речь',
+    cta: { text: 'Узнать больше', href: '/features' },
     png: '/images/speech-on-line_2.jpeg',
     mobilePng: '/images/speech-on-line_2.jpeg',
     objectPosition: 'center 20%',
