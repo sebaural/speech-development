@@ -14,8 +14,8 @@ export default function TeachersPage() {
       <Teachers />
       <section className="py-12 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6">
-          <h3 className="text-xl font-semibold">Свяжитесь с нами</h3>
-          <div className="mt-4 max-w-lg">
+          <h3 className="text-xl font-semibold text-center">Свяжитесь с нами</h3>
+          <div className="mt-4 max-w-lg mx-auto">
             <ContactForm />
           </div>
         </div>

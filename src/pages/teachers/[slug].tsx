@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams, useNavigate } from 'react-router-dom'
 
 import ContactForm from '../../components/ContactForm'
 import Footer from '../../components/Footer'
@@ -112,19 +112,20 @@ function findTeacherBySlug(slug: string | undefined): Teacher | undefined {
 /**
  * 404 Not Found Component
  */
-function TeacherNotFound(): JSX.Element {
+function TeacherNotFound({ onTeachersClick }: { onTeachersClick: (e: React.MouseEvent<HTMLAnchorElement>) => void }): JSX.Element {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-24 text-center">
-      <h2 className="text-2xl font-semibold text-slate-900">
+    <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-24 text-center">
+      <h2 className="text-xl sm:text-2xl font-semibold text-slate-900">
         Преподаватель не найден
       </h2>
-      <p className="mt-4 text-slate-600">
+      <p className="mt-4 text-sm sm:text-base text-slate-600">
         Запрашиваемый преподаватель не найден.
       </p>
       <div className="mt-6">
         <Link 
           to="/teachers" 
-          className="text-accent hover:text-accent-dark underline transition-colors"
+          onClick={onTeachersClick}
+          className="text-accent hover:text-accent-dark underline transition-colors text-sm sm:text-base"
         >
           Вернуться к преподавателям
         </Link>
@@ -144,6 +145,7 @@ export default function TeacherDetailPage(): JSX.Element {
   
   const { slug } = useParams<{ slug?: string }>()
   const location = useLocation()
+  const navigate = useNavigate()
   const [isCoursesExpanded, setIsCoursesExpanded] = useState(false)
 
   // ============================================================================
@@ -170,12 +172,21 @@ export default function TeacherDetailPage(): JSX.Element {
     setIsCoursesExpanded(!isCoursesExpanded)
   }
 
+  const handleTeachersClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigate('/teachers')
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 0)
+  }
+
   // ============================================================================
   // EARLY RETURNS
   // ============================================================================
   
   if (!teacher) {
-    return <TeacherNotFound />
+    return <TeacherNotFound onTeachersClick={handleTeachersClick} />
   }
 
   // ============================================================================
@@ -186,29 +197,29 @@ export default function TeacherDetailPage(): JSX.Element {
     <>
       <Nav />
       
-      <main className="w-full bg-[#efefef] py-12">
-        <article className="mx-auto max-w-4xl p-8 bg-white rounded-lg shadow-sm prose prose-slate">
+      <main className="w-full bg-[#efefef] py-6 px-4 sm:py-12">
+        <article className="mx-auto max-w-4xl p-4 sm:p-8 bg-white rounded-lg shadow-sm prose prose-slate">
           
           {/* Teacher Header Section */}
-          <header className="teacher-header flex items-start gap-6 mb-8 not-prose">
+          <header className="teacher-header flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-8 not-prose">
             
             {/* Profile Image */}
             {teacher.image && (
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 mx-auto sm:mx-0">
                 <img 
                   src={teacher.image} 
                   alt={`Фото ${teacher.name}`}
-                  className="teacher-image w-32 h-32 rounded-lg object-cover shadow-md" 
+                  className="teacher-image w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover shadow-md" 
                 />
               </div>
             )}
             
             {/* Teacher Info */}
-            <div className="flex-1 min-w-0">
-              <h1 className="text-3xl font-bold text-slate-900 mb-3">
+            <div className="flex-1 min-w-0 text-center sm:text-left">
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
                 {teacher.name}
               </h1>
-              <p className="text-lg text-slate-700 leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
                 {teacher.quote}
               </p>
             </div>
@@ -227,10 +238,10 @@ export default function TeacherDetailPage(): JSX.Element {
           {/* Education Section */}
           {teacher.education && (
             <section className="education-section mb-8 not-prose">
-              <h3 className="text-xl font-semibold text-slate-800 mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
                 Образование
               </h3>
-              <div className="text-slate-600 leading-relaxed">
+              <div className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {teacher.education}
               </div>
             </section>
@@ -241,13 +252,13 @@ export default function TeacherDetailPage(): JSX.Element {
             <section className="additional-courses-section mb-8 not-prose">
               
               {/* Section Header with Toggle Button */}
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-xl font-semibold text-slate-800">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 gap-2 sm:gap-0">
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-800">
                   Дополнительное образование
                 </h3>
                 <button
                   onClick={handleToggleCourses}
-                  className="text-accent hover:text-accent-dark transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded px-2 py-1"
+                  className="text-accent hover:text-accent-dark transition-colors text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded px-2 py-1 whitespace-nowrap"
                   aria-expanded={isCoursesExpanded}
                   aria-controls="courses-list"
                   type="button"
@@ -266,7 +277,7 @@ export default function TeacherDetailPage(): JSX.Element {
                     {teacher.additionalCourses.map((course, index) => (
                       <li 
                         key={index} 
-                        className="text-sm border-l-2 border-slate-200 pl-4 py-1 hover:border-accent transition-colors"
+                        className="text-xs sm:text-sm border-l-2 border-slate-200 pl-3 sm:pl-4 py-1 hover:border-accent transition-colors break-words"
                       >
                         {course}
                       </li>
@@ -279,21 +290,22 @@ export default function TeacherDetailPage(): JSX.Element {
           )}
 
           {/* Contact Form Section */}
-          <section className="contact-section my-12 pt-10 border-t border-slate-200 not-prose">
-            <h3 className="text-xl font-bold text-slate-800 mb-4">
+          <section className="contact-section my-8 sm:my-12 pt-6 sm:pt-10 border-t border-slate-200 not-prose">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-4 text-center sm:text-left">
               Свяжитесь с нами
             </h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed text-center sm:text-left">
               Если у вас есть вопросы или вы хотите записаться на консультацию, пожалуйста, заполните форму ниже.
             </p>
             <ContactForm />
           </section>
 
           {/* Navigation Footer */}
-          <footer className="mt-8 pt-6 border-t border-slate-200 not-prose">
+          <footer className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-200 not-prose text-center sm:text-left">
             <Link 
               to="/teachers" 
-              className="inline-flex items-center text-accent hover:text-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded px-2 py-1"
+              onClick={handleTeachersClick}
+              className="inline-flex items-center text-accent hover:text-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded px-2 py-1 text-sm sm:text-base"
             >
               ← Вернуться к преподавателям
             </Link>

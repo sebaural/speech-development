@@ -18,7 +18,7 @@ export default function ContactPage() {
       </section>
       <section className="py-10 bg-gray-100">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mt-4 max-w-lg">
+          <div className="mt-4 max-w-lg mx-auto">
             <ContactForm />
           </div>
         </div>

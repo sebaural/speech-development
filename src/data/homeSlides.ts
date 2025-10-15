@@ -6,7 +6,7 @@ const homeSlides: Slide[] = [
     subtitle: 'Инновационные методы и подходы для вашего успеха.',
   cta: { text: 'Наши педагоги', href: '/teachers' },
     png: '/images/hero_speech-on-line.png',
-    mobilePng: '/images/hero_speech-on-line.mobile.png',
+    mobilePng: '/images/services.mobile.png',
     objectPosition: 'center 20%',
   },
   {
