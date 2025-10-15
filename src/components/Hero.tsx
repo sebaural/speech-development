@@ -29,12 +29,14 @@ export interface HeroProps {
   slides: Slide[]
   autoplay?: boolean
   heightClasses?: string
+  textColor?: string
 }
 
 export default function Hero({
   slides,
   autoplay = true,
   heightClasses = 'h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[50vh]',
+  textColor = '#FFFFFF',
 }: HeroProps) {
   const [index, setIndex] = useState(0)
   const total = slides.length
@@ -193,8 +195,8 @@ export default function Hero({
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
             >
-              <h1 className="text-4xl font-bold text-white">{slides[index].title}</h1>
-              <p className="mt-4 text-lg text-white/90">{slides[index].subtitle}</p>
+              <h1 className="text-4xl font-bold" style={{ color: textColor }}>{slides[index].title}</h1>
+              <p className="mt-4 text-lg" style={{ color: textColor, opacity: 0.9 }}>{slides[index].subtitle}</p>
               <div className="mt-8 flex justify-center gap-4">
                 {slides[index].cta && (
                   <a
