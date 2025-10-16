@@ -18,8 +18,8 @@ const homeSlides: Slide[] = [
     objectPosition: 'center 20%',
   },
   {
-    title: 'Позвоните Нам',
-    subtitle: 'Мы всегда на связи',
+    title: 'ЖДЕМ ВАС',
+    subtitle: 'Будем рады услышать, как мы можем Вам помочь.',
     cta: { text: 'Подать Заявку', href: '/contact' },
     png: '/images/HP_hero_BG.jpg',
     mobilePng: '/images/HP_hero_BG.jpg',

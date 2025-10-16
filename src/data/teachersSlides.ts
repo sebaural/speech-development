@@ -18,14 +18,12 @@ const teachersSlides: Slide[] = [
     objectPosition: 'center 30%',
   },
   {
-    title: 'ВСЁ БОЛЬШЕ И БОЛЬШЕ клиенты любят работать с нами',
-    subtitle: 'Real stories from teams who shipped faster and scaled confidently.',
-    cta: { text: 'Заполнить форму', href: '/contact' },
-    jpg: '/images/hero-1.jpg',
-    webp: '/images/hero-1.webp',
-    avif: '/images/hero-1.avif',
-    svg: '/images/hero-1.svg',
-    objectPosition: 'center 30%',
+    title: 'ЖДЕМ ВАС',
+    subtitle: 'Будем рады услышать, как мы можем Вам помочь.',
+    cta: { text: 'Подать Заявку', href: '/contact' },
+    png: '/images/HP_hero_BG.jpg',
+    mobilePng: '/images/HP_hero_BG.jpg',
+    objectPosition: 'center 20%',
   },
 
 ]
