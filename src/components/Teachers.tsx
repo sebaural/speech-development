@@ -8,7 +8,7 @@ function slugify(name: string) {
 
 export default function Teachers() {
   return (
-    <section id="teachers" className="py-8 sm:py-16 bg-slate-50">
+    <section id="teachers" className="py-8 sm:py-4 bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-xl sm:text-2xl font-semibold text-center sm:text-left">Наши педагоги</h2>
         <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">

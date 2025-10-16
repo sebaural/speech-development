@@ -196,7 +196,7 @@ export default function Hero({
               transition={{ duration: 0.4 }}
             >
               <h1 className="text-4xl font-bold" style={{ color: textColor }}>{slides[index].title}</h1>
-              <p className="mt-4 text-lg" style={{ color: textColor, opacity: 0.9 }}>{slides[index].subtitle}</p>
+              <p className="mt-4 text-lg" style={{ fontWeight: 600, color: textColor, opacity: 1 }}>{slides[index].subtitle}</p>
               <div className="mt-8 flex justify-center gap-4">
                 {slides[index].cta && (
                   <a

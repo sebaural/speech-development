@@ -46,9 +46,9 @@ export default function Features(): JSX.Element {
 		<section className="py-12 bg-slate-50">
 			<div className="mx-auto max-w-6xl px-6">
 				<header className="mb-8 text-center">
-					<h2 className="text-3xl font-bold">Features</h2>
+					<h2 className="text-3xl font-bold">Наши Услуги</h2>
 					<p className="mt-2 text-slate-600">
-						Capabilities that help you ship faster and build with confidence.
+						Работа с детьми, подростками и взрослыми по развитию речи и навыков общения.
 					</p>
 				</header>
 
