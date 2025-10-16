@@ -13,7 +13,7 @@ export default function Nav(): JSX.Element {
     // Scroll to top after navigation
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 0)
+    }, 300)
   }
 
   const handleMobileNavClick = (path: string) => {
