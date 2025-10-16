@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import FeatureCard from './FeatureCard'
 import { featuresData } from '../data/featuresData'
 
@@ -25,23 +25,20 @@ const icons = [
 		loading="lazy"
 		aria-hidden="true"
 	/>,
-	<svg
-		className="h-20 w-20"
-		fill="none"
-		stroke="currentColor"
-		viewBox="0 0 24 24"
-		aria-hidden
-	>
-		<path
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth={2}
-			d="M16 11V7a4 4 0 10-8 0v4M5 21h14"
-		/>
-	</svg>,
 ]
 
 export default function Features(): JSX.Element {
+	const navigate = useNavigate()
+
+	const handleFeatureClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
+		e.preventDefault()
+		navigate(`/features/${slug}`)
+		// Scroll to top after navigation
+		setTimeout(() => {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+		}, 0)
+	}
+
 	return (
 		<section className="py-12 bg-slate-50">
 			<div className="mx-auto max-w-6xl px-6">
@@ -58,6 +55,7 @@ export default function Features(): JSX.Element {
 						<Link
 							key={f.slug}
 							to={`/features/${f.slug}`}
+							onClick={(e) => handleFeatureClick(e, f.slug)}
 							className="no-underline focus:outline-none flex h-full"
 							aria-label={`View details for ${f.title}`}
 						>
