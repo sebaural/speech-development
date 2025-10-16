@@ -44,8 +44,10 @@ export const featuresData: FeatureData[] = [
 • Развитие моторики и координации: Активно развиваем тонкую и общую моторику, формируем моторную ловкость, чувство равновесия и координацию движений.
 
 • Социализация и адаптация: Помогаем ребёнку успешно адаптироваться и социализироваться в обществе, развиваем умение слышать и слушать педагога, работать по заданию и формируем усидчивость.`,
+    /* image: '/images/features/kids.png',
+    featureImage: '/images/work-with-children.png', */
     image: '/images/features/kids.png',
-    featureImage: '/images/work-with-children.png',
+    featureImage: '/images/teacher-student.png',
     cta: { text: 'Подробнее', href: '#children' },
   },
   {
