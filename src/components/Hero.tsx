@@ -201,7 +201,7 @@ export default function Hero({
                 {slides[index].cta && (
                   <a
                     href={slides[index].cta.href}
-                    className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-white shadow"
+                    className="inline-flex items-center rounded-md bg-sky-500 hover:bg-sky-600 px-5 py-3 text-white shadow transition-colors duration-200"
                   >
                     {slides[index].cta.text}
                   </a>
