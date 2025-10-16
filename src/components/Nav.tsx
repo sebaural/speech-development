@@ -29,7 +29,7 @@ export default function Nav(): JSX.Element {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="mx-auto max-w-6xl px-6 py-3 md:py-4 flex items-center justify-between">
         <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="inline-flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-          <img src="/images/logo_new.png" alt="Речь и Развитие" className="h-16 md:h-12 lg:h-19 w-auto" />
+          <img src="/images/logo_new.png" alt="Речь и Развитие" className="h-10 md:h-12 lg:h-19 w-auto" />
           <span className="sr-only">Речь и Развитие</span>
         </Link>
 
