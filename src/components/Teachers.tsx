@@ -21,9 +21,9 @@ export default function Teachers() {
                 key={t.name}
                 to={href}
                 aria-label={`Read full profile of ${t.name}`}
-                className="group block rounded-lg border p-4 sm:p-6 hover:shadow-lg transition-shadow background-white"
+                className="group block rounded-lg border p-4 sm:p-6 hover:shadow-lg transition-shadow background-white flex flex-col"
               >
-                <blockquote>
+                <blockquote className="flex-grow">
                   <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3">
                     {t.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -36,6 +36,11 @@ export default function Teachers() {
 
                   <p className="mt-3 text-sm sm:text-base text-slate-700 text-center sm:text-left leading-relaxed">{t.quote}</p>
                 </blockquote>
+                <div className="mt-auto pt-5 pb-1 flex justify-center">
+                  <button className="Teachers-detail inline-flex items-center rounded-md bg-accent px-4 py-2 text-white w-[30%] justify-center text-sm">
+                    Подробнее
+                  </button>
+                </div>
               </Link>
             )
           })}

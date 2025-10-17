@@ -61,6 +61,10 @@ export default function FeatureCard({
         <p className="mt-2 text-sm text-slate-600 text-center">{description}</p>
       </div>
 
+      <button className="ReadMore inline-flex items-center rounded-md bg-accent px-4 py-2 text-white w-[55%] mx-auto justify-center text-sm">
+        Узнать подробнее
+      </button>
+
       {cta ? (
         <div className="mt-auto">
           <a
