@@ -36,11 +36,23 @@ export default function FeatureCard({
       {variant === 'long' && image ? (
         imageRound ? (
           <div className="mb-4 flex justify-center">
-            <img src={image} alt={title} className="w-36 h-36 object-cover rounded-full" />
+            <img 
+              src={image} 
+              alt={title} 
+              className="w-36 h-36 object-cover rounded-full"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         ) : (
           <div className="mb-4 overflow-hidden rounded-md">
-            <img src={image} alt={title} className="w-full h-44 object-cover" />
+            <img 
+              src={image} 
+              alt={title} 
+              className="w-full h-44 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         )
       ) : null}

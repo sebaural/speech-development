@@ -26,8 +26,13 @@ export default function Teachers() {
                 <blockquote className="flex-grow">
                   <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3">
                     {t.image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={t.image} alt={`${t.name}`} className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover flex-shrink-0" />
+                      <img 
+                        src={t.image} 
+                        alt={`${t.name}`} 
+                        className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover flex-shrink-0" 
+                        loading="lazy"
+                        decoding="async"
+                      />
                     ) : null}
                     <div className="text-center sm:text-left min-w-0">
                       <div className="text-sm sm:text-base text-slate-500 break-words font-bold">— {t.name}</div>

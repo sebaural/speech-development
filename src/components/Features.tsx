@@ -9,6 +9,7 @@ const icons = [
 		src="/images/features/kids.png"
 		alt=""
 		loading="lazy"
+		decoding="async"
 		aria-hidden="true"
 	/>,
 	<img
@@ -16,6 +17,7 @@ const icons = [
 		src="/images/features/teenagers.png"
 		alt=""
 		loading="lazy"
+		decoding="async"
 		aria-hidden="true"
 	/>,
 	<img
@@ -23,6 +25,7 @@ const icons = [
 		src="/images/features/adults.png"
 		alt=""
 		loading="lazy"
+		decoding="async"
 		aria-hidden="true"
 	/>,
 ]
