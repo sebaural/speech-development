@@ -30,7 +30,7 @@ export default function Teachers() {
                       <img src={t.image} alt={`${t.name}`} className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover flex-shrink-0" />
                     ) : null}
                     <div className="text-center sm:text-left min-w-0">
-                      <div className="text-sm sm:text-base text-slate-500 break-words">— {t.name}</div>
+                      <div className="text-sm sm:text-base text-slate-500 break-words font-bold">— {t.name}</div>
                     </div>
                   </div>
 
