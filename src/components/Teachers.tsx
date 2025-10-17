@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import teachers from '../data/teachers'
 
 function slugify(name: string) {
@@ -7,6 +7,17 @@ function slugify(name: string) {
 }
 
 export default function Teachers() {
+  const navigate = useNavigate()
+
+  const handleTeacherClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    navigate(href)
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 100)
+  }
+
   return (
     <section id="teachers" className="py-8 sm:py-4 bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -20,6 +31,7 @@ export default function Teachers() {
               <Link
                 key={t.name}
                 to={href}
+                onClick={(e) => handleTeacherClick(e, href)}
                 aria-label={`Read full profile of ${t.name}`}
                 className="group block rounded-lg border p-4 sm:p-6 hover:shadow-lg transition-shadow background-white flex flex-col"
               >
