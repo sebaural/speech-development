@@ -130,28 +130,6 @@ export default function ContactForm(): JSX.Element {
     }
   }
 
-/*   if (isSubmitted) {
-    return (
-      <div className="max-w-lg mx-auto p-6 bg-green-50 border border-green-200 rounded-lg">
-        <div className="text-center">
-          <div className="w-12 h-12 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3 className="text-lg font-semibold text-green-800 mb-2">Сообщение отправлено!</h3>
-          <p className="text-green-700 mb-4">Спасибо за ваше сообщение. Мы свяжемся с вами в ближайшее время.</p>
-          <button
-            onClick={() => setIsSubmitted(false)}
-            className="text-green-600 hover:text-green-800 underline font-medium"
-          >
-            Отправить ещё сообщение
-          </button>
-        </div>
-      </div>
-    )
-  } */
-
   return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6" noValidate>
       {/* Name Field */}
