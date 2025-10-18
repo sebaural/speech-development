@@ -20,6 +20,15 @@ export default function Adults(): JSX.Element {
     }, 0)
   }
 
+  const handleAllServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigate('/features')
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 0)
+  }
+
   return (
     <>
       <Nav />
@@ -39,15 +48,22 @@ export default function Adults(): JSX.Element {
             {feature.longDescription || feature.description}
           </div>
           
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/contact"
-              onClick={handleContactClick}
-              className="inline-flex items-center bg-accent hover:bg-accent-dark text-white font-medium py-3 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50"
-            >
-              Свяжитесь с нами
-            </Link>
-          </div>
+                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            to="/features"
+            onClick={handleAllServicesClick}
+            className="inline-block bg-slate-600 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition-colors duration-200 text-center"
+          >
+            Все услуги
+          </Link>
+          <Link
+            to="/contact"
+            onClick={handleContactClick}
+            className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 text-center"
+          >
+            Свяжитесь с нами
+          </Link>
+        </div>
         </div>
       </main>
       <Footer />

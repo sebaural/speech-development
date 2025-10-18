@@ -14,7 +14,7 @@ title: 'Клиенты любят работать с нами',
   {
     title: 'Работа с детьми',
     subtitle: 'Комплексный подход к развитию вашего ребёнка',
-    cta: { text: 'Услуги', href: '/features' },
+    cta: { text: 'Услуги', href: '/features/children' },
     png: '/images/lesson-on-line.webp',
     mobilePng: '/images/Benefits+of+Pediatric+Speech+Therapy+for+Children.mobile.webp',
     objectPosition: 'center 30%',

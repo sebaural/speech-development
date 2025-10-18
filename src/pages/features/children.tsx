@@ -20,6 +20,15 @@ export default function Children(): JSX.Element {
     }, 0)
   }
 
+  const handleAllServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigate('/features')
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 0)
+  }
+
   return (
     <>
       <Nav />
@@ -39,7 +48,14 @@ export default function Children(): JSX.Element {
             {feature.longDescription || feature.description}
           </div>
           
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/features"
+              onClick={handleAllServicesClick}
+              className="inline-flex items-center bg-slate-600 hover:bg-slate-700 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50"
+            >
+              Все услуги
+            </Link>
             <Link
               to="/contact"
               onClick={handleContactClick}
