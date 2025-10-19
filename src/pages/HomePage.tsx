@@ -11,7 +11,7 @@ import Nav from '../components/Nav'
 export default function HomePage() {
   return (
     <main>
-      <h1 className="sr-only">Логопедические услуги для детей и взрослых - Главная</h1>
+      <h1 className="sr-only">Речь и Развитие для детей и взрослых</h1>
       <Nav />
       <Hero slides={homeSlides} heightClasses="h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-[50vh]" />
   <Features />
