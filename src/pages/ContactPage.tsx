@@ -12,7 +12,7 @@ export default function ContactPage() {
       <Hero slides={contactSlides} heightClasses="h-[25vh] sm:h-[30vh] md:h-[36vh] lg:h-[40vh]" />
       <section className="py-10">
         <div className="mx-auto max-w-6xl px-6">
-          {/* <h2 className="text-2xl font-semibold">Свяжитесь с нами</h2> */}
+          <h1 className="text-3xl font-bold text-center text-slate-900 mb-4">Свяжитесь с нами</h1>
           <p className="mt-4 text-2xl text-slate-600">Заполните форму ниже, и мы свяжемся с вами.</p>
         </div>
       </section>

@@ -9,6 +9,7 @@ import Nav from '../components/Nav'
 export default function FeaturesPage() {
   return (
     <main>
+      <h1 className="sr-only">Наши услуги - Логопедические и педагогические услуги</h1>
       <Nav />
       <Hero slides={featuresSlides} heightClasses="h-[28vh] sm:h-[32vh] md:h-[36vh] lg:h-[40vh]" />
       <Features />

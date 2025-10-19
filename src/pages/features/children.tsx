@@ -43,7 +43,7 @@ export default function Children(): JSX.Element {
       )}
       <main className="mx-auto max-w-4xl md:max-w-6xl px-6 py-12">
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">{feature.title}</h2>
+          <h1 className="text-3xl font-bold text-slate-900 mb-6">{feature.title}</h1>
           <div className="whitespace-pre-line text-slate-700" style={{ lineHeight: '1.4' }}>
             {feature.longDescription || feature.description}
           </div>

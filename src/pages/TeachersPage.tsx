@@ -9,6 +9,7 @@ import Nav from '../components/Nav'
 export default function TeachersPage() {
   return (
     <main>
+      <h1 className="sr-only">Наши педагоги - Квалифицированные специалисты</h1>
       <Nav />
       <Hero slides={teachersSlides} heightClasses="h-[30vh] sm:h-[36vh] md:h-[42vh] lg:h-[40vh]" />
       <Teachers />
