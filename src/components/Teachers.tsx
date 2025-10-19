@@ -18,11 +18,21 @@ export default function Teachers() {
     }, 100)
   }
 
+  // Dynamically determine grid columns based on number of teachers
+  const getGridCols = () => {
+    const teacherCount = teachers.length
+    if (teacherCount <= 2) {
+      return 'grid-cols-1 md:grid-cols-2' // 2 teachers: full width on desktop
+    } else {
+      return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' // 3+ teachers: 3 columns on large screens
+    }
+  }
+
   return (
     <section id="teachers" className="py-8 sm:py-4 bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-xl sm:text-2xl font-semibold text-center sm:text-left">Наши педагоги</h2>
-        <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className={`mt-4 sm:mt-6 grid ${getGridCols()} gap-4 sm:gap-6`}>
           {teachers.map((t) => {
             const tAny = t as any
             const slug = tAny.slug || (tAny.href ? String(tAny.href).replace(/\/+$/g, '').split('/').pop() : slugify(t.name))
