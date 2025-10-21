@@ -45,3 +45,10 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
 		border-radius: 8px;
 	}
 }
+
+.Feature-Card,
+.ReadMore,
+.teacher-item,
+.Teachers-detail {
+	cursor: url('/images/funny-butterfly.png'), pointer;
+}

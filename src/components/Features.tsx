@@ -59,7 +59,7 @@ export default function Features(): JSX.Element {
 							key={f.slug}
 							to={`/features/${f.slug}`}
 							onClick={(e) => handleFeatureClick(e, f.slug)}
-							className="no-underline focus:outline-none flex h-full"
+							className="features-item no-underline focus:outline-none flex h-full"
 							aria-label={`View details for ${f.title}`}
 						>
 							<FeatureCard
