@@ -26,7 +26,7 @@ export default function Nav(): JSX.Element {
   }
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-500">
       <div className="mx-auto max-w-6xl px-6 py-3 md:py-4 flex items-center justify-between">
         <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="inline-flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
           <img 
@@ -71,8 +71,8 @@ export default function Nav(): JSX.Element {
 
       {/* mobile menu (rendered below header; use absolute positioning so it doesn't shift layout) */}
       {open && (
-        <div id="mobile-menu" className="md:hidden absolute inset-x-0 top-full z-30 bg-white border-t shadow-sm">
-          <div className="px-6 py-4 flex flex-col gap-3">
+        <div id="mobile-menu" className="md:hidden absolute inset-x-0 top-full z-30 bg-white border-t shadow-sm ">
+          <div className="menu-slide px-6 py-4 flex flex-col gap-3 border-b border-slate-500" style={{ background: '#eee' }}>
             {!isHome && (
               <Link to="/" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/'); }} className={`block ${location.pathname === '/' ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Главная</Link>
             )}
