@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="py-10">
         <div className="mx-auto max-w-6xl px-6">
           <h1 className="text-3xl font-bold text-center text-slate-900 mb-4">Свяжитесь с нами</h1>
-          <p className="mt-4 text-2xl text-slate-600">Заполните форму ниже, и мы свяжемся с вами.</p>
+          <p className="mt-4 sm:text-2xl text-slate-600 text-center" style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)' }}>Заполните форму ниже, и мы свяжемся с вами.</p>
         </div>
       </section>
       <section className="py-10 bg-gray-100">
