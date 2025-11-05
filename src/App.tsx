@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import FeaturesPage from './pages/FeaturesPage'
 import TeachersPage from './pages/TeachersPage'
 import ContactPage from './pages/ContactPage'
+import SiteMapPage from './pages/SiteMapPage'
 import Children from './pages/features/children'
 import Teenagers from './pages/features/teenagers'
 import Adults from './pages/features/adults'
@@ -71,6 +72,7 @@ export default function App(): JSX.Element {
   <Route path="/teachers" element={<TeachersPage />} />
   <Route path="/teachers/:slug" element={<TestimonialDetailPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/sitemap" element={<SiteMapPage />} />
     </Routes>
   )
 }

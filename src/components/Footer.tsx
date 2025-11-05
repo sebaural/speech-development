@@ -17,7 +17,9 @@ export default function Footer() {
           <p className="text-sm text-slate-600">© {new Date().getFullYear()} Речь и Развитие. Все права защищены.</p>
         </div>
         <div className="flex items-center text-sm text-slate-600">
-          <p>Вопросы? Посетите нашу <a href="/contact" className="text-accent underline">страницу контактов</a>, чтобы связаться с нами.</p>
+          <p>Вопросы? Посетите нашу <a href="/contact" className="text-accent underline">страницу контактов</a>, чтобы связаться с нами. 
+          <span className="mx-2">•</span> 
+          <a href="/sitemap" className="text-accent underline">Карта сайта</a></p>
         </div>
       </div>
     </footer>
