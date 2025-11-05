@@ -89,8 +89,8 @@ const siteMapData: SiteMapItem[] = [
     priority: 'medium'
   },
   {
-    title: 'Ирина Александровна Петрова',
-    path: '/teachers/petrovna-irina',
+    title: 'Якунцева Ирина Викторовна',
+    path: '/teachers/yakunceva-irina',
     description: 'Учитель начальных классов, репетитор по математике и русскому языку',
     category: 'teacher',
     lastModified: '2025-11-05',
