@@ -40,10 +40,10 @@ export default function Nav(): JSX.Element {
         </Link>
 
         <nav className="hidden md:flex gap-6">
-          {!isHome && <Link to="/" onClick={(e) => handleNavClick(e, '/')} className={`text-sm ${location.pathname === '/' ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Главная</Link>}
-          <Link to="/features" onClick={(e) => handleNavClick(e, '/features')} className={`text-sm ${location.pathname === '/features' || location.pathname.startsWith('/features/') ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Услуги</Link>
-          <Link to="/teachers" onClick={(e) => handleNavClick(e, '/teachers')} className={`text-sm ${location.pathname === '/teachers' || location.pathname.startsWith('/teachers/') ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Преподаватели</Link>
-          <Link to="/contact" onClick={(e) => handleNavClick(e, '/contact')} className={`text-sm ${location.pathname === '/contact' ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Контакты</Link>
+          {!isHome && <Link to="/" onClick={(e) => handleNavClick(e, '/')} className={`text-sm font-semibold ${location.pathname === '/' ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Главная</Link>}
+          <Link to="/features" onClick={(e) => handleNavClick(e, '/features')} className={`text-sm font-semibold ${location.pathname === '/features' || location.pathname.startsWith('/features/') ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Услуги</Link>
+          <Link to="/teachers" onClick={(e) => handleNavClick(e, '/teachers')} className={`text-sm font-semibold ${location.pathname === '/teachers' || location.pathname.startsWith('/teachers/') ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Преподаватели</Link>
+          <Link to="/contact" onClick={(e) => handleNavClick(e, '/contact')} className={`text-sm font-semibold ${location.pathname === '/contact' ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Контакты</Link>
         </nav>
 
         {/* mobile toggle */}
@@ -74,11 +74,11 @@ export default function Nav(): JSX.Element {
         <div id="mobile-menu" className="md:hidden absolute inset-x-0 top-full z-30 bg-white border-t shadow-sm ">
           <div className="menu-slide px-6 py-4 flex flex-col gap-3 border-b border-slate-500" style={{ background: '#eee' }}>
             {!isHome && (
-              <Link to="/" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/'); }} className={`block ${location.pathname === '/' ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Главная</Link>
+              <Link to="/" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/'); }} className={`block font-semibold ${location.pathname === '/' ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Главная</Link>
             )}
-            <Link to="/features" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/features'); }} className={`block ${location.pathname === '/features' || location.pathname.startsWith('/features/') ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Услуги</Link>
-            <Link to="/teachers" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/teachers'); }} className={`block ${location.pathname === '/teachers' || location.pathname.startsWith('/teachers/') ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Преподаватели</Link>
-            <Link to="/contact" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/contact'); }} className={`block ${location.pathname === '/contact' ? 'text-orange-500 font-medium' : 'text-slate-700 hover:text-sky-500'}`}>Контакты</Link>
+            <Link to="/features" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/features'); }} className={`block font-semibold ${location.pathname === '/features' || location.pathname.startsWith('/features/') ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Услуги</Link>
+            <Link to="/teachers" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/teachers'); }} className={`block font-semibold ${location.pathname === '/teachers' || location.pathname.startsWith('/teachers/') ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Преподаватели</Link>
+            <Link to="/contact" onClick={(e) => { e.preventDefault(); handleMobileNavClick('/contact'); }} className={`block font-semibold ${location.pathname === '/contact' ? 'text-orange-500' : 'text-slate-700 hover:text-sky-500'}`}>Контакты</Link>
           </div>
         </div>
       )}

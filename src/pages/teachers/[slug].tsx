@@ -125,7 +125,8 @@ function TeacherNotFound({ onTeachersClick }: { onTeachersClick: (e: React.Mouse
         <Link 
           to="/teachers" 
           onClick={onTeachersClick}
-          className="text-accent hover:text-accent-dark underline transition-colors text-sm sm:text-base"
+          className="underline transition-colors text-sm sm:text-base font-semibold"
+          style={{ color: 'rgb(14, 165, 233)' }}
         >
           Вернуться к преподавателям
         </Link>
@@ -301,13 +302,14 @@ export default function TeacherDetailPage(): JSX.Element {
           </section>
 
           {/* Navigation Footer */}
-          <footer className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-200 not-prose text-center sm:text-left">
+          <footer className="mt-6 sm:mt-8 pt-6 border-t border-slate-200 not-prose text-center sm:text-left">
             <Link 
               to="/teachers" 
               onClick={handleTeachersClick}
-              className="inline-flex items-center text-accent hover:text-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded px-2 py-1 text-sm sm:text-base"
+              className="inline-flex items-center transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded px-2 py-1 text-sm sm:text-base font-semibold"
+              style={{ color: 'rgb(14, 165, 233)' }}
             >
-              ← Вернуться к преподавателям
+              <span className="font-light mr-2 flex items-center text-xl">⬅</span> Вернуться к преподавателям
             </Link>
           </footer>
           
