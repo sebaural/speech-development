@@ -28,7 +28,7 @@ export default function FeatureCard({
 }: FeatureCardProps): JSX.Element {
   return (
     <article
-      className={`Feature-Card  group relative flex flex-col gap-4 rounded-lg border border-slate-100 bg-white p-6 shadow-sm hover:shadow-md focus-within:shadow-md transition-shadow ${className}`}
+      className={`Feature-Card  group relative flex flex-col gap-4 rounded-lg border border-slate-300 bg-white p-6 shadow-sm hover:shadow-md focus-within:shadow-md transition-shadow ${className}`}
       tabIndex={0}
       aria-labelledby={`feature-title-${title.replace(/\s+/g, '-')}`}
     >
