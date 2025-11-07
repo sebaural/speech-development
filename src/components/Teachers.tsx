@@ -43,7 +43,7 @@ export default function Teachers() {
                 to={href}
                 onClick={(e) => handleTeacherClick(e, href)}
                 aria-label={`Read full profile of ${t.name}`}
-                className="teacher-item group block rounded-lg border p-4 sm:p-6 hover:shadow-lg transition-shadow background-white flex flex-col"
+                className="teacher-item group block rounded-lg border border-slate-300 p-4 sm:p-6 hover:shadow-lg transition-shadow bg-white flex flex-col"
               >
                 <blockquote className="flex-grow">
                   <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3">
