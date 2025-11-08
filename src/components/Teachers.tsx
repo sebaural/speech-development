@@ -31,7 +31,7 @@ export default function Teachers() {
   return (
     <section id="teachers" className="py-8 sm:py-4 bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="text-3xl font-semibold text-center">Наши педагоги</h2>
+        <h2 className="text-3xl font-semibold text-center">Наши Преподователи</h2>
         <div className={`mt-4 sm:mt-6 grid ${getGridCols()} gap-4 sm:gap-6`}>
           {teachers.map((t) => {
             const tAny = t as any
