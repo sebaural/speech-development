@@ -50,6 +50,11 @@ export default function Features(): JSX.Element {
 					<p className="mt-2 text-slate-600">
 						Работа с детьми, подростками и взрослыми по развитию речи и навыков общения.
 					</p>
+					<div className="first-meeting-desc mt-6 text-slate-600 lg:max-w-[75%] lg:mx-auto">
+						<h3 className="font-bold text-lg">Что вас ждёт на первой встрече?</h3>
+						<p className='mt-5'>Первое занятие — это знакомство, которое ни к чему не обязывает, но даёт много полезной информации!</p>
+						<p>Проведём его в тёплой, игровой атмосфере, чтобы ребёнок чувствовал себя уверенно и комфортно.</p>
+					</div>
 				</header>
 
 				{/* Use an auto-fit CSS grid so cards grow to fill available width regardless of count */}
