@@ -59,7 +59,7 @@ export default function FeatureCard({
 
       {/* Icon on top, centered */}
       {icon ? (
-        <div className="mb-3 flex justify-center">
+        <div className="flex justify-center">
           <div className="inline-flex items-center justify-center rounded-full bg-slate-100 text-accent">
             {icon}
           </div>
