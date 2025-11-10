@@ -29,7 +29,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
         width="100%"
         height="600"
         style={{
-          border: 'none',
+          border: '1px solid #dfe3e8',
           maxWidth: '100%',
           margin: '0 auto',
           display: 'block'
