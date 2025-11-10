@@ -24,8 +24,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
   return (
     <div className={`contact-form-container ${className}`}>
       <iframe
-        src="https://forms.yandex.ru/u/68f3e3f390fa7b75c7f46f59?iframe=1"
-        name="ya-form-68f3e3f390fa7b75c7f46f59"
+        src="https://forms.yandex.ru/u/691268db1f1eb51c5a233365?iframe=1"
+        name="ya-form-691268db1f1eb51c5a233365"
         width="100%"
         height="600"
         style={{
