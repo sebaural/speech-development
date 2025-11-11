@@ -27,12 +27,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
         src="https://forms.yandex.ru/u/691268db1f1eb51c5a233365?iframe=1"
         name="ya-form-691268db1f1eb51c5a233365"
         width="100%"
-        height="600"
+        height="auto"
         style={{
           border: '1px solid #dfe3e8',
+          borderRadius: '8px',
           maxWidth: '100%',
+          maxHeight: '500px',
           margin: '0 auto',
-          display: 'block'
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
         title="Contact Form"
       />
