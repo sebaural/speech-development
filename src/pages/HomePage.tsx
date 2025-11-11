@@ -23,7 +23,8 @@ export default function HomePage() {
     {/*   <CTA /> */}
       <section className="py-12 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6">
-          <h3 className="text-xl font-semibold text-center">Свяжитесь с нами</h3>
+          <h3 className="text-xl font-semibold text-center">Контактная информация</h3>
+          <p className="mt-2 text-center text-slate-600">Заполните форму ниже, и наш специалист свяжется с вами в ближайшее время.</p>
           <div className="mt-4 max-w-lg mx-auto">
             <ContactForm />
           </div>
